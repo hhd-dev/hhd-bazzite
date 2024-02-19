@@ -38,9 +38,9 @@ other:
 cmd:
   type: container
   title: Command Output
-  tags: [advanced]
+  tags: [ advanced ]
   children:
     output:
       title: Command Output
       type: display
-      tags: [ command_output ]
+      tags: [ command_output, hide-title, code ]

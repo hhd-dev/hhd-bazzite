@@ -7,4 +7,4 @@ children:
   changelog:
     title: Changelog
     type: display
-    tags: [ changelog, bazzite-changelog ]
+    tags: [ changelog, bazzite-changelog, code ]

@@ -60,7 +60,7 @@ class Plugin(HHDPlugin):
 
     def update(self, conf: Config):
         if self.init:
-            conf["bazzite.changelog"] = get_changelog()
+            conf["bazzite.bazzite.changelog"] = get_changelog()
             self.init = False
 
         todo = []
