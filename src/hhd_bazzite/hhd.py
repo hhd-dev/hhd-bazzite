@@ -9,6 +9,14 @@ from hhd.plugins.conf import Config
 logger = logging.getLogger(__name__)
 
 
+def get_changelog():
+    try:
+        out = subprocess.run(["ujust", "changelog"], capture_output=True)
+        return str(out.stdout)
+    except Exception as e:
+        return f"Could not retrieve changelog with error:\n{e}"
+
+
 def execute_ujust(cmd: str):
     try:
         out = subprocess.run(["ujust", cmd], capture_output=True)
@@ -34,6 +42,7 @@ class Plugin(HHDPlugin):
         self.name = f"bazzite"
         self.priority = 70
         self.log = "bazz"
+        self.init = True
 
     def settings(self) -> HHDSettings:
         return {
@@ -46,9 +55,14 @@ class Plugin(HHDPlugin):
         emit,
         context: Context,
     ):
+        self.init = True
         pass
 
     def update(self, conf: Config):
+        if self.init:
+            conf["bazzite.changelog"] = get_changelog()
+            self.init = False
+
         todo = []
         for group in ("utilities.decky", "utilities.other"):
             for cmd, val in conf[group].to(dict).items():
