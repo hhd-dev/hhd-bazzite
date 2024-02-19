@@ -34,6 +34,9 @@ other:
     set-autologin-gamemode:
       title: Set start-up to Gamemode
       type: action
+
+    clear-old-updates:
+      title: Remove Old Updates
       
 cmd:
   type: container
