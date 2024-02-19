@@ -37,6 +37,7 @@ other:
 
     clear-old-updates:
       title: Remove Old Updates
+      type: action
       
 cmd:
   type: container
