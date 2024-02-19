@@ -23,20 +23,20 @@ decky:
 
 other:
   type: container
-  title: Other Commands
+  title: System Commands
   tags: [advanced]
   
   children:
+    clear-old-updates:
+      title: Remove Old Updates
+      type: action
+
     set-autologin-desktop:
       title: Set start-up to Desktop
       type: action
 
     set-autologin-gamemode:
       title: Set start-up to Gamemode
-      type: action
-
-    clear-old-updates:
-      title: Remove Old Updates
       type: action
       
 cmd:
