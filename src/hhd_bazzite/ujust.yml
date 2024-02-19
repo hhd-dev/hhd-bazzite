@@ -7,7 +7,6 @@ decky:
   children:
     install-decky:
       title:  Decky
-
       type: action
 
     install-hhd-decky:
