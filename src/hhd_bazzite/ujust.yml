@@ -1,0 +1,47 @@
+decky:
+  type: container
+  title: Decky Installer
+  hint: The most useful `ujust` commands, available from SteamUI.
+  tags: [advanced]
+
+  children:
+    install-decky:
+      title:  Decky
+
+      type: action
+
+    install-hhd-decky:
+      title: HHD Decky Plugin
+      type: action
+
+    install-simpledeckytdp:
+      title: SimpleDeckyTDP for TDP
+      type: action
+
+    install-replace-glyphs:
+      title: Playstation Glyphs Theme
+      type: action
+
+other:
+  type: container
+  title: Other Commands
+  tags: [advanced]
+  
+  children:
+    set-autologin-desktop:
+      title: Set start-up to Desktop
+      type: action
+
+    set-autologin-gamemode:
+      title: Set start-up to Gamemode
+      type: action
+      
+cmd:
+  type: container
+  title: Command Output
+  tags: [advanced]
+  children:
+    output:
+      title: Command Output
+      type: display
+      tags: [ command_output ]

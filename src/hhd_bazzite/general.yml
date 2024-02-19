@@ -1,0 +1,10 @@
+type: container
+title: Bazzite
+hint: Bazzite Information
+tags: [ advanced ]
+
+children:
+  changelog:
+    title: Changelog
+    type: display
+    tags: [ changelog, bazzite-changelog ]
