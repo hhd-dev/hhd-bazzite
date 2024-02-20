@@ -85,9 +85,9 @@ class Plugin(HHDPlugin):
             logs = []
             for cmd in todo:
                 out = execute_ujust(cmd)
-                logs.append(f"Executing command '{cmd}'\n{out}")
+                logs.append(f"> Executing command '{cmd}'\n{out}")
 
-            log = "\n".join(logs)
+            log = "\n\n".join(logs)
             logger.info(f"Executed ujust commands:\n{log}")
             conf["utilities.cmd.output"] = log
 
