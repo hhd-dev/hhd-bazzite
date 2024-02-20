@@ -64,18 +64,32 @@ class Plugin(HHDPlugin):
             self.init = False
 
         todo = []
-        for group in ("utilities.decky", "utilities.other"):
-            for cmd, val in conf[group].to(dict).items():
-                if val:
+        for cmd, val in conf["utilities.other"].to(dict).items():
+            if val:
+                todo.append(cmd)
+                conf[f"utilities.other.{cmd}"] = False
+
+        if conf["utilities.decky.apply"].to(bool):
+            install = False
+            conf["utilities.decky.apply"] = False
+            for cmd, val in conf["utilities.decky"].to(dict).items():
+                if cmd != "apply" and val:
                     todo.append(cmd)
-                    conf[f"{group}.{cmd}"] = False
+                    conf[f"utilities.decky.{cmd}"] = False
+                    install = True
 
-        log = ""
-        for cmd in todo:
-            log += f"Executing command '{cmd}'\n"
-            log += execute_ujust(cmd)
+            if install:
+                todo.append("refresh-decky")
 
-        conf["utilities.cmd.output"] = log
+        if todo:
+            logs = []
+            for cmd in todo:
+                out = execute_ujust(cmd)
+                logs.append(f"Executing command '{cmd}'\n{out}")
+
+            log = "\n".join(logs)
+            logger.info(f"Executed ujust commands:\n{log}")
+            conf["utilities.cmd.output"] = log
 
     def close(self):
         pass

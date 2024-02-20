@@ -6,19 +6,23 @@ decky:
 
   children:
     install-decky:
-      title:  Decky
-      type: action
+      title: Decky
+      type: bool
 
     install-hhd-decky:
-      title: HHD Decky Plugin
-      type: action
+      title: Handheld Daemon Decky Plugin
+      type: bool
 
     install-simpledeckytdp:
       title: SimpleDeckyTDP for TDP
-      type: action
+      type: bool
 
     install-replace-glyphs:
       title: Playstation Glyphs Theme
+      type: bool
+
+    apply:
+      title: Install Selected
       type: action
 
 other:
