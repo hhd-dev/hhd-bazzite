@@ -2,7 +2,7 @@ decky:
   type: container
   title: Decky Installer
   hint: The most useful `ujust` commands, available from SteamUI.
-  tags: [advanced]
+  tags: [ advanced ]
 
   children:
     install-decky:
@@ -24,13 +24,9 @@ decky:
 other:
   type: container
   title: System Commands
-  tags: [advanced]
+  tags: [ advanced ]
   
   children:
-    clear-old-updates:
-      title: Remove Old Updates
-      type: action
-
     set-autologin-desktop:
       title: Set start-up to Desktop
       type: action
